@@ -1,19 +1,19 @@
-const express = require("express");
+const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/',(req,res,next)=>{
-    console.log("this is middleware start")
-    next();
+app.use('/add-product',(req,res,next)=>{
+    res.send('<form action ="/product" method="POST"><labell>Enter product</label><br><input type="text" name="Title"><br><button type="submit">Submit</button>')
 })
 
-app.use('/price',(req,res,next)=>{
-    console.log('I Am in "price" Medilware')
-    res.send('<h1>Add the product "price"</h1>')
+app.use('/product',(req,res,next)=>{
+    console.log(req.body);
+    res.redirect('/')
 })
 
 app.use('/',(req,res,next)=>{
-    console.log("in another Middleware end")
     res.send('<h1>Hello this is Express</h1>')
 })
 app.listen(4000)
