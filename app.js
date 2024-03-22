@@ -1,14 +1,17 @@
-const express = require("express");
+const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use((req,res,next)=>{
-    console.log("HI I Am Medilware Here")
-    next();   // this allows to continue to  the another middlewrae
-})
-app.use((req,res,next)=>{
-    console.log("HI I Am another Medilware Here")
-    res.send('<h1>hello fucking Express</h1>')
-})
+const adminRoutes = require('./routes/admin');    //module importing from admin
+const shopeRoutes = require('./routes/shope');   //module importing from admin
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(adminRoutes);
+app.use(shopeRoutes);
 
 app.listen(4000)
+
+
