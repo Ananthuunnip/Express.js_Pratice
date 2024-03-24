@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shope</title>
+    <style>
+        nav{
+            height: 10vh;
+            background-color: red;
+            width: 100%;
+        }
+        div{
+            background-color: antiquewhite;
+            margin-left: 30%;
+            margin-right: 30%;
+            padding: 10vh;
+        }
+        
+        input{
+            margin-left: 5vh;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Shope</a></li>
+                <li><a href="/add-product">ADD PRODUCT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            <form action ="/add-product" method="POST">
+                <labell>Enter product  :  </label>
+                <input type="text" name="Title"><br>
+                <labell>Enter Size of product   :  </label>
+                <input type="text" name="size"><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>
